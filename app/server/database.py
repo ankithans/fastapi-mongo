@@ -29,6 +29,7 @@ async def retrieve_students():
 async def add_student(student_data: dict) -> dict:
     student = await student_collection.insert_one(student_data)
     new_student = await student_collection.find_one({"_id": student.inserted_id})
+    return student_helper(new_student)
 
 
 # Retrive a student with matching id
