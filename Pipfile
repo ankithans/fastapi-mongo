@@ -8,6 +8,7 @@ fastapi = "*"
 uvicorn = "*"
 pydantic = {extras = ["email"], version = "*"}
 motor = "*"
+python-decouple = "*"
 
 [dev-packages]
 

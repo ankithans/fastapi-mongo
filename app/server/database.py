@@ -1,7 +1,8 @@
 from bson.objectid import ObjectId
 import motor.motor_asyncio
+from decouple import config
 
-MONGO_URI = "mongodb+srv://ankit:ankit@cluster0.ubbgm.mongodb.net/students?retryWrites=true&w=majority"
+MONGO_URI = config("MONGO_URI")
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URI)
 database = client.students
 student_collection = database.get_collection("students_collection")
